@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+
+# navigation
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+# ls
+alias ls='ls --color=auto'
+alias l='ls -l'
+alias ll='ls -lahF'
+alias la='ls -a'
+
+# file ops
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+
+# git
+alias gst='git status'
+
+# editor
+alias vi='nvim'
+alias vim='nvim'
+
+# python
+alias ipy='workon ipy && python3 -m IPython'
+alias workoff='deactivate'
+
+# vmware - mount shared drive
+##alias sharemount='sudo vmhgfs-fuse .host:{path_on_host} {path_on_guest} -o subtype=vmhgfs-fuse,allow_other'

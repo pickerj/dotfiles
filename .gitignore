@@ -1,0 +1,7 @@
+.zcompdump
+.zsh_history
+
+cache/
+
+ipython/profile_default/startup/
+*.sqlite
