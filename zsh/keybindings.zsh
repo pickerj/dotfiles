@@ -134,15 +134,16 @@ bindkey -- "${keys[End]}"                 .end-of-line
 bindkey -- "${keys[Insert]}"              .overwrite-mode
 bindkey -- "${keys[Backspace]}"           .backward-delete-char
 bindkey -- "${keys[Delete]}"              .delete-char
-bindkey -- "${keys[Up]}"                  .up-line-or-search
-bindkey -- "${keys[Down]}"                .down-line-or-search
+bindkey -- "${keys[Up]}"                  history-substring-search-up
+bindkey -- "${keys[Down]}"                history-substring-search-down
 bindkey -- "${keys[Left]}"                .backward-char
 bindkey -- "${keys[Right]}"               .forward-char
-bindkey -- "${keys[PageUp]}"              .beginning-of-buffer-or-history
-bindkey -- "${keys[PageDown]}"            .end-of-buffer-or-history
+bindkey -- "${keys[PageUp]}"              .up-line-or-search
+bindkey -- "${keys[PageDown]}"            .down-line-or-search
 bindkey -- "${keys[Shift+Tab]}"           .reverse-menu-complete
 bindkey -- "${keys[Ctrl+Backspace]}"      .backward-delete-word
 bindkey -- "${keys[Ctrl+Alt+Backspace]}"  .backward-delete-word
 bindkey -- "${keys[Ctrl+Delete]}"         .delete-word
 bindkey -- "${keys[Ctrl+Left]}"           .backward-word
 bindkey -- "${keys[Ctrl+Right]}"          .forward-word
+

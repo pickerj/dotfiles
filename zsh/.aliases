@@ -1,9 +1,13 @@
 #!/usr/bin/bash
 
+# zsh
+alias zsource="source $ZDOTDIR/.zshrc"
+
 # navigation
-alias ~='cd ~'
-alias ..='cd ..'
-alias ...='cd ../..'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 

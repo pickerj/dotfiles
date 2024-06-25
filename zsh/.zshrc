@@ -9,7 +9,6 @@ source "$ZDOTDIR/.zshenv" # in case this has changed since login
 # aliases #
 #%=-----=%#
 source "$ZDOTDIR/.aliases"
-alias zsource="source $ZDOTDIR/.zshrc"
 
 #%=--------=%#
 # navigation #
@@ -20,7 +19,6 @@ setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 
-setopt CORRECT              # Spelling correction
 setopt CDABLE_VARS          # Change directory to a path stored in a variable.
 setopt EXTENDED_GLOB        # Use extended globbing syntax.
 
@@ -43,6 +41,10 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 #%=---------=%#
 # completions #
 #%=---------=%#
+setopt COMPLETE_ALIASES     # Treat aliases like distinct commands.
+setopt COMPLETE_IN_WORD     # Complete from cursor location.
+setopt CORRECT              # Spelling correction.
+setopt GLOB_COMPLETE        # Completing on globs shows matching patterns instead of autofilling all matches.
 source "$ZDOTDIR/completions.zsh"
 
 #%=---------=%#
@@ -53,7 +55,7 @@ source "$ZDOTDIR/keybindings.zsh"
 #%=----=%#
 # prompt #
 #%=----=%#
-
+setopt TRANSIENT_RPROMPT  # Remove right prompt when accepting a command line.
 fpath=($ZDOTDIR/plugins/themes $fpath)
 source $ZDOTDIR/plugins/themes/prompt_purification_setup
 
@@ -70,5 +72,12 @@ source "$HOME/.cargo/env"
 #%=-=%#
 # ssh #
 #%=-=%#
-[ -n "$SSH_AUTH_SOCK" ] || eval "$(ssh-agent)"
-for k ($(realpath $HOME/.ssh/priv/*)) ssh-add $k; unset k
+[ -n "$SSH_AUTH_SOCK" ] || eval "$(ssh-agent)" 1>/dev/null 2>&1
+
+
+#%=-----=%#
+# plugins # 
+#%=-----=%#
+source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$ZDOTDIR/plugins/zsh-history-substring-search.zsh"
+
