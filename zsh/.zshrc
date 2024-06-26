@@ -56,8 +56,8 @@ source "$ZDOTDIR/keybindings.zsh"
 # prompt #
 #%=----=%#
 setopt TRANSIENT_RPROMPT  # Remove right prompt when accepting a command line.
-fpath=($ZDOTDIR/plugins/themes $fpath)
-source $ZDOTDIR/plugins/themes/prompt_purification_setup
+fpath=($ZDOTDIR/themes $fpath)
+source $ZDOTDIR/themes/prompt_theend_setup
 
 #%=--------=%#
 # virtualenv #
