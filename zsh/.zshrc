@@ -64,6 +64,11 @@ source $ZDOTDIR/themes/prompt_theend_setup
 #%=--------=%#
 source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
 
+#%=-=%#
+# nvm #
+#%=-=%#
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 #%=--------=%#
 # rust/cargo #
 #%=--------=%#

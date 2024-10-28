@@ -21,6 +21,9 @@ export SAVEHIST=10000
 # man pages
 export MANPAGER='nvim +Man!'
 
+# node.js
+export NVM_DIR="$HOME/.config/nvm"
+
 # python
 ## ipython
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
