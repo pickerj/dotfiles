@@ -26,8 +26,8 @@ alias rm='rm -iv'
 alias gst='git status'
 
 # editor
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
+alias vim='vim'
 
 # python
 alias ipy='workon ipy && python3 -m IPython'
