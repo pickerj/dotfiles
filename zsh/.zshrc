@@ -62,7 +62,13 @@ source $ZDOTDIR/themes/prompt_theend_setup
 #%=--------=%#
 # virtualenv #
 #%=--------=%#
-source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+	source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+elif [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+	source "$HOME/.local/bin/virtualenvwrapper.sh"
+else
+	echo "virtualenvwrapper not installed globally or locally."
+fi
 
 #%=-=%#
 # nvm #
@@ -83,11 +89,11 @@ source "$HOME/.cargo/env"
 #%=-----=%#
 # plugins # 
 #%=-----=%#
+source "$ZDOTDIR/plugins/zsh-history-substring-search.zsh"
 zsh_syntax_file="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 if [ -f "$zsh_syntax_file" ]; then
-	source zsh_syntax_file
+	source "$zsh_syntax_file"
 else
 	echo "Package \"zsh-syntax-highlighting\" not found. Try \`apt install zsh-syntax-highlighting\`."
 fi
-source "$ZDOTDIR/plugins/zsh-history-substring-search.zsh"
 
